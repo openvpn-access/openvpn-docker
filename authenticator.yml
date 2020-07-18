@@ -1,0 +1,8 @@
+db:
+    user: openvpn-access
+    password: openvpn-access
+    host: db
+    database: openvpn_access
+  log:
+    verb: 03000
+    file: /var/log/openvpn-access-login.log
