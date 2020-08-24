@@ -1,13 +1,13 @@
 FROM ubuntu:18.04
 
 # Install dependencies
-RUN apt update -y \
-    && apt upgrade -y \
-    && apt install software-properties-common -y \
-    && add-apt-repository ppa:ubuntu-toolchain-r/test \
-    && apt update -y \
-    && apt upgrade -y \
-    && apt install git wget openvpn openssl build-essential gcc-10 g++-10 -y 
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install software-properties-common -y \
+    && add-apt-repository ppa:ubuntu-toolchain-r/test -y \
+    && apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install git wget openvpn openssl build-essential gcc-10 g++-10 -y 
 
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 20 --slave /usr/bin/g++ g++ /usr/bin/g++-10
 
