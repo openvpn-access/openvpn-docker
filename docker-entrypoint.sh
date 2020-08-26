@@ -24,11 +24,11 @@ if [[ ! -f ./private/openvpn-access.pem ]]; then
     echo "Signing vpn request..."
     openssl x509 -req -in req/openvpn-access.csr -CA crt/ca.crt -CAkey private/ca.pem -CAcreateserial -out crt/openvpn-access.crt
 
-    echo "Generating diphie hellman params..."
-    openssl dhparam -out dh.pem 4096 &> /dev/null
-
     echo "Generatinng ta secret..."
     openvpn --genkey --secret ta.key
+
+    echo "Generating diphie hellman params..."
+    openssl dhparam -out dh.pem 4096 &> /dev/null
 else
     echo "PKI already exists!"
 fi
